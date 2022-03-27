@@ -108,7 +108,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput("state", "Select the state", choices = states.list, selected = states.list[1]),
-      selectInput("city", "Select the city", choices = cities.list$P.name[cities.list$State == states.list[1]], selected = cities.list$P.name[2]),
+      selectInput("city", "Select the city", choices = cities.list$P.name[cities.list$State == states.list[1]], selected = cities.list$P.name[1]),
       selectInput("var", "Select the annual climate variable", choices = var.list, selected = var.list[1]),
       sliderInput(inputId = "st.yr", label = "Starting year for the 20-year forecasts:", min = 1977, max = 2022, step = 5, value = 1977, ticks = TRUE),
       downloadButton("download", "Download")
