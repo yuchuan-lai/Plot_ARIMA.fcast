@@ -14,7 +14,7 @@ fcast_plot <- function(city.ID, climate.var, select.st.yr) {
     col.colors <- c("#A63603", "#E6550D", "#FD8D3C")
   } else {
     my.colors <- RColorBrewer::brewer.pal(5, "Blues")
-    fill.colors <- c("#6BAED6", "#BDD7E7")
+    fill.colors <- c("#6BAED670", "#BDD7E770")
     col.colors <- c("#08519C", "#3182BD", "#6BAED6")
   }
   
@@ -67,17 +67,7 @@ fcast_prepare <- function(city.ID, climate.var, select.st.yr) {
   city.name <- cities.list$Name[cities.list$ID %in% city.ID]
   select.var <- c(1:length(var.list))[var.list %in% climate.var]
   cliamte.var.ID <- var.ID[select.var]
-  
-  if (select.var <= 11) {
-    my.colors <- RColorBrewer::brewer.pal(5, "Oranges")
-    fill.colors <- c("#FD8D3C70", "#FDBE8570")
-    col.colors <- c("#A63603", "#E6550D", "#FD8D3C")
-  } else {
-    my.colors <- RColorBrewer::brewer.pal(5, "Blues")
-    fill.colors <- c("#6BAED670", "#BDD7E770")
-    col.colors <- c("#08519C", "#3182BD", "#6BAED6")
-  }
-  
+
   fcast.all <- readRDS(paste0("./Data/", city.name, ".rds"))
   fcast.var <- fcast.all[[cliamte.var.ID]]
   
