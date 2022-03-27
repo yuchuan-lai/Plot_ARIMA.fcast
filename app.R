@@ -38,7 +38,7 @@ fcast_plot <- function(city.ID, climate.var, select.st.yr) {
     ggplot2::geom_ribbon(data = filter(fcast.df, is.na(low80) == FALSE), ggplot2::aes(x = year, ymin = low80, ymax = upp80, fill = paste0(my.colors[3], "80"))) +
     ggplot2::geom_line(data = filter(fcast.df, is.na(median) == FALSE), ggplot2::aes(x = year, y = median, color =  my.colors[5]), size = 1) +
     ggplot2::scale_fill_manual(guide = ggplot2::guide_legend(override.aes = list(linetype = c("blank", "blank"), shape = c(NA, NA))),
-                               labels = c("80%", "95%"), values = c(fill.colors) , name = "Prediction intervals") +
+                               labels = c("80%", "95%"), values = c(fill.colors) , name = "Forecast intervals") +
     ggplot2::scale_color_manual(guide = ggplot2::guide_legend(override.aes = list(linetype = c("blank", "solid", "solid"), shape = c(16, NA, NA), 
                                                                                   size = c(3, 1.5, 1.5),
                                                                                   color = c(my.colors[4], my.colors[3], my.colors[5]))),
