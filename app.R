@@ -1,4 +1,6 @@
 library(shiny)
+library(ggplot2)
+library(dplyr)
 
 fcast_plot <- function(city.ID, climate.var, select.st.yr) {
   
